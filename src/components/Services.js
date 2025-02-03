@@ -84,7 +84,17 @@ const Services = () => {
           ))}
         </div>
       </div>
+      <footer className="footer bg-success text-white mt-5 py-4 text-center">
+        <div className="container">
+          <p className="mb-2">&copy; 2025 Cabinet Vétérinaire | Tous droits réservés</p>
+          <div className="social-icons">
+            <a href="#" className="text-white mx-2"><i className="fab fa-facebook"></i></a>
+            <a href="#" className="text-white mx-2"><i className="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </footer>
     </div>
+    
   );
 };
 
