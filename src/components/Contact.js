@@ -94,16 +94,15 @@ const Contact = () => {
                       required
                     />
                   </div>
-                  <div className="mb-3">
-                    <label htmlFor="date" className="form-label">
-                      Date du Rendez-vous
-                    </label>
-                    <input
-                      type="date"
-                      className="form-control"
-                      id="date"
-                      required
-                    />
+                  <div className="row">
+                    <div className="col-md-6 mb-3">
+                      <label className="form-label">Heure du Rendez-vous</label>
+                      <input type="time" className="form-control" required />
+                    </div>
+                    <div className="col-md-6 mb-3">
+                      <label className="form-label">Date du Rendez-vous</label>
+                      <input type="date" className="form-control" required />
+                    </div>
                   </div>
                   <div className="mb-3">
                     <label htmlFor="message" className="form-label">
@@ -126,10 +125,14 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <footer className="text-center mt-5">
-        <p className="text-success">
-          &copy; 2025 Cabinet Vétérinaire | Tous droits réservés
-        </p>
+      <footer className="footer bg-success text-white mt-5 py-4 text-center">
+        <div className="container">
+          <p className="mb-2">&copy; 2025 Cabinet Vétérinaire | Tous droits réservés</p>
+          <div className="social-icons">
+            <a href="#" className="text-white mx-2"><i className="fab fa-facebook"></i></a>
+            <a href="#" className="text-white mx-2"><i className="fab fa-instagram"></i></a>
+          </div>
+        </div>
       </footer>
     </div>
   );
