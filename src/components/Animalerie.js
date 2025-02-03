@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './Animalerie.css';
-import produitImage from '../img/téléchargement.jpg';
 import { FaStar, FaShoppingCart } from 'react-icons/fa';
+import '../App.css';
+import produitImage from '../img/téléchargement.jpg';
 
 const Animalerie = () => {
   const [visibleProducts, setVisibleProducts] = useState([]);
@@ -37,21 +37,11 @@ const Animalerie = () => {
     },
   ];
 
-  const renderStars = (rating) => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <FaStar key={i} className={`star ${i <= rating ? 'filled' : ''}`} />
-      );
-    }
-    return stars;
-  };
-
   useEffect(() => {
-    products.forEach((product, index) => {
+    products.forEach((_, index) => {
       setTimeout(() => {
         setVisibleProducts((prev) => [...prev, index]);
-      }, index * 300); 
+      }, index * 300);
     });
   }, []);
 
@@ -59,35 +49,37 @@ const Animalerie = () => {
     <div className="animalerie-section py-5 bg-light">
       <div className="container">
         <div className="text-center mb-5">
-          <h1 className="display-4 text-success font-weight-bold">Bienvenue à l'Animalerie</h1>
           <p className="lead text-muted">
-            Découvrez nos produits pour choyer vos compagnons à quatre pattes. Un large choix pour leur bien-être !
+            Découvrez nos produits pour choyer vos compagnons à quatre pattes !
           </p>
         </div>
 
-        <div className="row">
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
           {products.map((product, index) => (
-            <div key={index} className="col-md-3 mb-4">
-              <div
-                className={`product-card ${visibleProducts.includes(index) ? 'visible' : ''}`}
-              >
-                <img src={product.image} alt={product.name} className="product-image" />
-                <h4 className="product-title mt-3">{product.name}</h4>
-                <p className="product-description">{product.description}</p>
-                <div className="product-rating">{renderStars(product.rating)}</div>
-                <div className="product-price">{product.price.toLocaleString()} Ariary</div>
+            <div key={index} className="col">
+              <div className={`card shadow-lg border-0 h-100 product-card ${visibleProducts.includes(index) ? 'visible' : ''}`}>
+                <img src={product.image} alt={product.name} className="card-img-top" />
+                <div className="card-body text-center">
+                  <h5 className="card-title text-success fw-bold">{product.name}</h5>
+                  <p className="card-text text-muted">{product.description}</p>
+                  <div className="d-flex justify-content-center align-items-center mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar key={i} className={i < product.rating ? 'text-warning' : 'text-secondary'} />
+                    ))}
+                  </div>
+                  <h6 className="fw-bold">{product.price.toLocaleString()} Ariary</h6>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <footer className="footer bg-success text-white mt-5 py-4">
-        <div className="container text-center">
+      <footer className="footer bg-success text-white mt-5 py-4 text-center">
+        <div className="container">
           <p className="mb-2">&copy; 2025 Cabinet Vétérinaire | Tous droits réservés</p>
           <div className="social-icons">
             <a href="#" className="text-white mx-2"><i className="fab fa-facebook"></i></a>
-            <a href="#" className="text-white mx-2"><i className="fab fa-twitter"></i></a>
             <a href="#" className="text-white mx-2"><i className="fab fa-instagram"></i></a>
           </div>
         </div>
