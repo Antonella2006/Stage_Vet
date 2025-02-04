@@ -1,20 +1,45 @@
 import React from 'react';
-import chatImage from '../img/chat.jpg';
-import tel from '../img/téléchargement.jpg';
+import vac from '../img/vaccin.jpeg';
+import tel from '../img/chirurgie.jpeg';
+import cons from '../img/consultation.jpeg';
 import '../App.css'; 
 
 const Home = () => {
+
+  const services = [
+    {
+      title: "Consultations vétérinaires",
+      image: cons,
+      description: "Assurez la santé de vos animaux avec des consultations régulières adaptées à leurs besoins."
+    },
+    {
+      title: "Vaccinations",
+      image: vac,
+      description: "Protégez vos animaux avec nos services de vaccination pour éviter les maladies courantes."
+    },
+    {
+      title: "Chirurgie et soins postopératoires",
+      image: tel,
+      description: "Des interventions chirurgicales de qualité, suivies de soins postopératoires pour une guérison rapide."
+    }
+  ];
+
   return (
     <div className="d-flex flex-column min-vh-100">
       <div className="container mt-5 flex-grow-1">
         <header className="text-center mb-5">
           <h2 className="display-4 text-success">Bienvenue au Cabinet Vétérinaire</h2>
-          <p className="lead text-muted">Nous offrons des soins professionnels et attentionnés pour garantir la santé et le bien-être de vos animaux.</p>
+          <p className="lead text-muted">
+            Nous offrons des soins professionnels et attentionnés pour garantir la santé et le bien-être de vos animaux.
+          </p>
         </header>
         <section className="row mb-5 align-items-center">
           <div className="col-md-6">
             <h3 className="text-success">Qui sommes-nous ?</h3>
-            <p>Notre cabinet vétérinaire s'engage à offrir des soins de qualité à vos animaux. Nous proposons une large gamme de services, allant des consultations de routine aux soins spécialisés, toujours dans un environnement calme et bienveillant.</p>
+            <p>
+              Notre cabinet vétérinaire s'engage à offrir des soins de qualité à vos animaux. Nous proposons une large gamme de services, 
+              allant des consultations de routine aux soins spécialisés, toujours dans un environnement calme et bienveillant.
+            </p>
           </div>
           <div className="col-md-6">
             <img src={tel} alt="Cabinet Vétérinaire" className="img-fluid shadow" />
@@ -23,17 +48,18 @@ const Home = () => {
         <section className="mb-4">
           <h3 className="text-success mb-4">Nos Services</h3>
           <div className="row">
-            {["Consultations vétérinaires", "Vaccinations", "Chirurgie et soins postopératoires"].map((service, index) => (
+            {services.map((service, index) => (
               <div className="col-md-4 mb-3" key={index}>
                 <div className="card shadow-lg border-0">
-                  <img src={chatImage} className="card-img-top img-hover" alt={service} style={{ height: '200px', objectFit: 'cover' }} />
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="card-img-top img-hover" 
+                    style={{ height: '200px', objectFit: 'cover' }} 
+                  />
                   <div className="card-body">
-                    <h5 className="card-title text-success">{service}</h5>
-                    <p className="card-text text-muted">
-                      {index === 0 ? "Assurez la santé de vos animaux avec des consultations régulières adaptées à leurs besoins."
-                        : index === 1 ? "Protégez vos animaux avec nos services de vaccination pour éviter les maladies courantes."
-                        : "Des interventions chirurgicales de qualité, suivies de soins postopératoires pour une guérison rapide."}
-                    </p>
+                    <h5 className="card-title text-success">{service.title}</h5>
+                    <p className="card-text text-muted">{service.description}</p>
                   </div>
                 </div>
               </div>
