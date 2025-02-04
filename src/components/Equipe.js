@@ -38,10 +38,10 @@ const teamMembers = [
   {
     id: 5,
     name: 'Mme Andy',
-    role: 'Receptionniste',
+    role: 'Réceptionniste',
     image: vet1,
     description:
-      'Mme Andy ....................',
+      'Mme Andy est la première personne que vous rencontrerez en entrant dans notre cabinet. Accueillante et organisée, elle assure la gestion des rendez-vous, répond aux questions des clients et veille au bon fonctionnement de l’accueil.',
   },
 ];
 
