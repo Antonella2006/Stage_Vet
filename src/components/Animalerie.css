@@ -1,4 +1,3 @@
-
 .animalerie-section {
   font-family: 'Arial', sans-serif;
 }
@@ -11,7 +10,7 @@
   text-align: center;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 250px;
+  max-width: 350px;
   margin: auto;
   overflow: hidden;
 }
@@ -23,7 +22,7 @@
 
 .product-image {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -70,7 +69,6 @@
   background-color: #218838;
 }
 
-
 .product-card {
   opacity: 0;
   transform: translateY(20px);
@@ -81,7 +79,6 @@
   opacity: 1;
   transform: translateY(0);
 }
-
 
 .footer {
   background-color: #218838;
@@ -98,4 +95,26 @@
 
 .social-icons a:hover {
   color: #28a745;
+}
+
+.promotion-carousel .carousel-item {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-item-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.promo-card {
+  background-color: #fff3cd;
+  border: 2px solid #ffeeba;
+  border-radius: 16px;
+}
+
+.promo-card .card-title,
+.promo-card .card-text,
+.promo-card h6 {
+  color: #856404;
 }
