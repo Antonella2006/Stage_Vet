@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaHome, FaConciergeBell, FaStore, FaUsers, FaPhone, FaSearch } from 'react-icons/fa';
 import chatImage from '../img/téléchargement.jpg';
 
 const Navbar = () => {
+  const location = useLocation();
+  
   return (
     <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: '#28a745', padding: '1rem 1.5rem', fontSize: '1.2rem' }}>
       <div className="container-fluid">
@@ -16,11 +18,31 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item"><Link className="nav-link text-white" to="/"><FaHome style={{ marginRight: '5px' }} /> Accueil</Link></li>
-            <li className="nav-item"><Link className="nav-link text-white" to="/services"><FaConciergeBell style={{ marginRight: '5px' }} /> Services</Link></li>
-            <li className="nav-item"><Link className="nav-link text-white" to="/Animalerie"><FaStore style={{ marginRight: '5px' }} />Animalerie</Link></li>
-            <li className="nav-item"><Link className="nav-link text-white" to="/Equipe"><FaUsers style={{ marginRight: '5px' }} /> Equipes</Link></li>
-            <li className="nav-item"><Link className="nav-link text-white" to="/Contact"><FaPhone style={{ marginRight: '5px' }} /> Contact</Link></li>
+            <li className="nav-item">
+              <Link className={`nav-link text-white ${location.pathname === '/' ? 'bg-success' : ''}`} to="/" style={{ borderRadius: '15px', padding: '0.5rem 1rem' }}>
+                <FaHome style={{ marginRight: '5px' }} /> Accueil
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className={`nav-link text-white ${location.pathname === '/services' ? 'bg-success' : ''}`} to="/services" style={{ borderRadius: '15px', padding: '0.5rem 1rem' }}>
+                <FaConciergeBell style={{ marginRight: '5px' }} /> Services
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className={`nav-link text-white ${location.pathname === '/Animalerie' ? 'bg-success' : ''}`} to="/Animalerie" style={{ borderRadius: '15px', padding: '0.5rem 1rem' }}>
+                <FaStore style={{ marginRight: '5px' }} /> Animalerie
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className={`nav-link text-white ${location.pathname === '/Equipe' ? 'bg-success' : ''}`} to="/Equipe" style={{ borderRadius: '15px', padding: '0.5rem 1rem' }}>
+                <FaUsers style={{ marginRight: '5px' }} /> Equipes
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className={`nav-link text-white ${location.pathname === '/Contact' ? 'bg-success' : ''}`} to="/Contact" style={{ borderRadius: '15px', padding: '0.5rem 1rem' }}>
+                <FaPhone style={{ marginRight: '5px' }} /> Contact
+              </Link>
+            </li>
           </ul>
           <form className="d-flex">
             <div className="input-group" style={{ borderRadius: '50px', overflow: 'hidden', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)' }}>
