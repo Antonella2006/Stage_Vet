@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import './navbar.css';
 import { FaHome, FaConciergeBell, FaStore, FaUsers, FaPhone, FaSearch } from 'react-icons/fa';
 import chatImage from '../img/téléchargement.jpg';
 
@@ -19,27 +20,27 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className={`nav-link text-white ${location.pathname === '/' ? 'bg-success' : ''}`} to="/" style={{ borderRadius: '15px', padding: '0.5rem 1rem' }}>
+              <Link className={`nav-link text-white ${location.pathname === '/' ? 'bg-success' : ''}`} to="/" style={{ borderRadius: '15px', padding: '0.5rem 1rem', transition: 'background-color 0.3s ease, transform 0.3s ease' }}>
                 <FaHome style={{ marginRight: '5px' }} /> Accueil
               </Link>
             </li>
             <li className="nav-item">
-              <Link className={`nav-link text-white ${location.pathname === '/services' ? 'bg-success' : ''}`} to="/services" style={{ borderRadius: '15px', padding: '0.5rem 1rem' }}>
+              <Link className={`nav-link text-white ${location.pathname === '/services' ? 'bg-success' : ''}`} to="/services" style={{ borderRadius: '15px', padding: '0.5rem 1rem', transition: 'background-color 0.3s ease, transform 0.3s ease' }}>
                 <FaConciergeBell style={{ marginRight: '5px' }} /> Services
               </Link>
             </li>
             <li className="nav-item">
-              <Link className={`nav-link text-white ${location.pathname === '/Animalerie' ? 'bg-success' : ''}`} to="/Animalerie" style={{ borderRadius: '15px', padding: '0.5rem 1rem' }}>
+              <Link className={`nav-link text-white ${location.pathname === '/Animalerie' ? 'bg-success' : ''}`} to="/Animalerie" style={{ borderRadius: '15px', padding: '0.5rem 1rem', transition: 'background-color 0.3s ease, transform 0.3s ease' }}>
                 <FaStore style={{ marginRight: '5px' }} /> Animalerie
               </Link>
             </li>
             <li className="nav-item">
-              <Link className={`nav-link text-white ${location.pathname === '/Equipe' ? 'bg-success' : ''}`} to="/Equipe" style={{ borderRadius: '15px', padding: '0.5rem 1rem' }}>
+              <Link className={`nav-link text-white ${location.pathname === '/Equipe' ? 'bg-success' : ''}`} to="/Equipe" style={{ borderRadius: '15px', padding: '0.5rem 1rem', transition: 'background-color 0.3s ease, transform 0.3s ease' }}>
                 <FaUsers style={{ marginRight: '5px' }} /> Equipes
               </Link>
             </li>
             <li className="nav-item">
-              <Link className={`nav-link text-white ${location.pathname === '/Contact' ? 'bg-success' : ''}`} to="/Contact" style={{ borderRadius: '15px', padding: '0.5rem 1rem' }}>
+              <Link className={`nav-link text-white ${location.pathname === '/Contact' ? 'bg-success' : ''}`} to="/Contact" style={{ borderRadius: '15px', padding: '0.5rem 1rem', transition: 'background-color 0.3s ease, transform 0.3s ease' }}>
                 <FaPhone style={{ marginRight: '5px' }} /> Contact
               </Link>
             </li>
@@ -57,3 +58,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
