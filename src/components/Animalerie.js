@@ -3,6 +3,8 @@ import { FaStar, FaShoppingCart } from 'react-icons/fa';
 import Carousel from 'react-bootstrap/Carousel';
 import '../App.css';
 import produitImage from '../img/téléchargement.jpg';
+import prom from '../img/chat.jpg';
+import prom2 from '../img/vaccin.jpeg';
 
 const Animalerie = () => {
   const [visibleProducts, setVisibleProducts] = useState([]);
@@ -50,16 +52,20 @@ const Animalerie = () => {
     {
       name: 'Promotion : Jouet pour chiots',
       price: 7000,
+      originalPrice: 8000, // Prix d'origine avant réduction
       rating: 5.0,
       description: 'Jouet en promotion pour chiots, profitez-en maintenant !',
-      image: produitImage,
+      image: prom,
+      discount: 0.1, // Réduction de 10%
     },
     {
       name: 'Promotion : Collier en cuir',
       price: 13000,
+      originalPrice: 15000,
       rating: 4.2,
       description: 'Collier en cuir de qualité en promotion, offrez le meilleur à votre compagnon.',
-      image: produitImage,
+      image: prom2,
+      discount: 0.2, // Réduction de 20%
     },
   ];
 
@@ -80,8 +86,16 @@ const Animalerie = () => {
                 <div className="carousel-item-container">
                   <div
                     className="card shadow-lg border-0 h-100 product-card promo-card"
-                    style={{ maxWidth: '350px', margin: '0 auto' }}
+                    style={{ maxWidth: '350px', margin: '0 auto', position: 'relative' }}
                   >
+                    {/* Badge Promo */}
+                    <span
+                      className="badge bg-warning text-dark position-absolute"
+                      style={{ top: '10px', left: '10px', fontSize: '0.8rem', padding: '0.3rem 0.5rem', borderRadius: '10px' }}
+                    >
+                      Promo
+                    </span>
+
                     <img
                       src={product.image}
                       alt={product.name}
@@ -98,9 +112,29 @@ const Animalerie = () => {
                           />
                         ))}
                       </div>
+                      {/* Affichage du prix avec réduction */}
                       <h6 className="fw-bold text-dark">
+                        <span
+                          className="text-muted text-decoration-line-through"
+                          style={{ fontSize: '0.9rem' }}
+                        >
+                          {product.originalPrice.toLocaleString()} Ariary
+                        </span>
+                        {' '}
                         {product.price.toLocaleString()} Ariary
                       </h6>
+                      {/* Affichage de la réduction */}
+                      <span
+                        className="badge bg-danger text-white"
+                        style={{
+                          fontSize: '0.8rem',
+                          padding: '0.3rem 0.5rem',
+                          borderRadius: '5px',
+                          marginTop: '10px',
+                        }}
+                      >
+                        {Math.round(product.discount * 100)}% Off
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -134,6 +168,7 @@ const Animalerie = () => {
                       />
                     ))}
                   </div>
+                  {/* Affichage du prix sans réduction */}
                   <h6 className="fw-bold">{product.price.toLocaleString()} Ariary</h6>
                 </div>
               </div>
