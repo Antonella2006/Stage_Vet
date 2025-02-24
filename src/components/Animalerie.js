@@ -52,11 +52,11 @@ const Animalerie = () => {
     {
       name: 'Promotion : Jouet pour chiots',
       price: 7000,
-      originalPrice: 8000, // Prix d'origine avant réduction
+      originalPrice: 8000,
       rating: 5.0,
       description: 'Jouet en promotion pour chiots, profitez-en maintenant !',
       image: prom,
-      discount: 0.1, // Réduction de 10%
+      discount: 0.1,
     },
     {
       name: 'Promotion : Collier en cuir',
@@ -65,7 +65,7 @@ const Animalerie = () => {
       rating: 4.2,
       description: 'Collier en cuir de qualité en promotion, offrez le meilleur à votre compagnon.',
       image: prom2,
-      discount: 0.2, // Réduction de 20%
+      discount: 0.2,
     },
   ];
 
@@ -88,7 +88,6 @@ const Animalerie = () => {
                     className="card shadow-lg border-0 h-100 product-card promo-card"
                     style={{ maxWidth: '350px', margin: '0 auto', position: 'relative' }}
                   >
-                    {/* Badge Promo */}
                     <span
                       className="badge bg-warning text-dark position-absolute"
                       style={{ top: '10px', left: '10px', fontSize: '0.8rem', padding: '0.3rem 0.5rem', borderRadius: '10px' }}
@@ -112,7 +111,6 @@ const Animalerie = () => {
                           />
                         ))}
                       </div>
-                      {/* Affichage du prix avec réduction */}
                       <h6 className="fw-bold text-dark">
                         <span
                           className="text-muted text-decoration-line-through"
@@ -123,7 +121,6 @@ const Animalerie = () => {
                         {' '}
                         {product.price.toLocaleString()} Ariary
                       </h6>
-                      {/* Affichage de la réduction */}
                       <span
                         className="badge bg-danger text-white"
                         style={{
@@ -147,9 +144,7 @@ const Animalerie = () => {
           {products.map((product, index) => (
             <div key={index} className="col">
               <div
-                className={`card shadow-lg border-0 h-100 product-card ${
-                  visibleProducts.includes(index) ? 'visible' : ''
-                }`}
+                className={`card shadow-lg border-0 h-100 product-card ${visibleProducts.includes(index) ? 'visible' : ''}`}
                 style={{ maxWidth: '350px', margin: '0 auto' }}
               >
                 <img
@@ -168,7 +163,6 @@ const Animalerie = () => {
                       />
                     ))}
                   </div>
-                  {/* Affichage du prix sans réduction */}
                   <h6 className="fw-bold">{product.price.toLocaleString()} Ariary</h6>
                 </div>
               </div>
