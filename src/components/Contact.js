@@ -34,11 +34,7 @@ const Contact = () => {
                   <div className="mb-3"><label htmlFor="name" className="form-label">Nom complet</label><input type="text" className="form-control" id="name" placeholder="Votre nom complet" required /></div>
                   <div className="mb-3"><label htmlFor="email" className="form-label">Email</label><input type="email" className="form-control" id="email" placeholder="Votre email" required /></div>
                   <div className="mb-3"><label htmlFor="phone" className="form-label">Téléphone</label><input type="tel" className="form-control" id="phone" placeholder="Votre numéro de téléphone" required /></div>
-                  <div className="row">
-                    <div className="col-md-6 mb-3"><label className="form-label">Heure du Rendez-vous</label><input type="time" className="form-control" required /></div>
-                    <div className="col-md-6 mb-3"><label className="form-label">Date du Rendez-vous</label><input type="date" className="form-control" required /></div>
-                  </div>
-                  <div className="mb-3"><label htmlFor="message" className="form-label">Message</label><textarea className="form-control" id="message" rows="4" placeholder="Expliquez brièvement vos besoins ou la raison du rendez-vous" required></textarea></div>
+                  <div className="mb-3"><label htmlFor="message" className="form-label">Message</label><textarea className="form-control" id="message" rows="4" placeholder="Votre message..." required></textarea></div>
                   <button type="submit" className="btn btn-success w-100"><i className="fas fa-paper-plane me-2"></i>Envoyer</button>
                 </form>
               </div>
